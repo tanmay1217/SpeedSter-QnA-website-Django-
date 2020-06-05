@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{qst.title}} | SpeedSter
+{% endblock %}
+
+  {% block content %}
+  <br>
+  <div class="container">
+    <h5>{{qst.title}}</h5>
+    <p>{{qst.body}}</p>
+    posted by {{qst.user}} <br>
+    <br>
+    {% for i in ans %}
+        {{i.text}}  <br> |  {{i.user}}  | {{i.x_ago}}<hr>
+    {% endfor %}
+    <br>
+    {% if user.is_authenticated %}
+    <form action="{% url 'answer_view' qst.id %}"method="post">
+      {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" name="submit" value="submit">
+    </form>
+    {% endif %}
+
+  </div>
+  {% endblock %}

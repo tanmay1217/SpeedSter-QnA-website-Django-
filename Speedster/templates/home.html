@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+HOME
+{% endblock %}
+
+{% block content %}
+<style>
+ .inset {
+   border-style: inset;
+   border-width: 4px;
+   border-color: #dfe9f0;
+   border-radius: 20px;
+ }
+</style>
+<img class="bg_image" src="{% static 'images/bg.jpg' %}" alt="Snow" style="width:100%;">
+<div class="centered"><p class="monospace ">We Love People Who Code</p></div>
+
+<div class="inset">
+  <div class="container">
+    <div class="right_side_rectangle">
+      <a class="add_q"href="{% url 'new_question' %}">New Question</a>
+      </div>
+      <div class="right_side_rectangle2">
+      <a href="{% url 'my_question_view' %}">My Questions</a>
+    </div>
+    <br><br><br>
+    {% for i in show_q %}
+    <div class="newsitem">
+      <br><a href="{% url 'question' i.id %}">{{i.title}} <span class="text-seconday-num_answers"> ({{i.num_answers}} comments) </span> </a><br>
+    </div>
+    {% endfor %}
+    <div class="mx-auto">
+      {% if show_q.paginator.num_pages > 1 %}
+      <br>
+      <div class="text-center">
+        {% for pg in show_q.paginator.page_range %}
+        <a href="?page={{pg}}" class="btn btn-light btn-sm {% if users.number == pg %}active{% endif %}">{{pg}}</a>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

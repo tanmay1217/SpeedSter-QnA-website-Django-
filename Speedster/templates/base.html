@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      {% block title %}
+      {% endblock %}
+    </title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link href="{% static 'css/tanmay.css' %}" rel="stylesheet" type="text/css">
+  <script src="{% static 'js/tanmay.js' %}"></script><br><br><br><br><br><br>
+  </head>
+  <body>
+    {% include 'navbar.html' %}
+    {% block content %}
+    {% endblock %}
+    <div class="container">
+      <footer id="footer">Copyright &copy;
+        <script type="text/JavaScript">
+        document.write(new Date().getFullYear());
+        </script> Tanmay
+      </footer>
+    </div>
+  </body>
+</html>

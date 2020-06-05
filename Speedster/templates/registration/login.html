@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}
+LOGIN
+{% endblock %}
+{% block content %}
+<div class="container">
+  <h1 class="login_head">Login Form</h1>
+  {% if form.errors %}
+      <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+
+    {% if next %}
+      {% if user.is_authenticated %}
+        <p>Your account doesn't have access to this page. To proceed,
+        please login with an account that has access.</p>
+      {% else %}
+        <p>Please login to see this page.</p>
+      {% endif %}
+    {% endif %}
+    <form method="post" action="{% url 'login' %}">
+      {% csrf_token %}
+      {{form.as_p}}
+      <input type="submit" value="login" >
+      <input type="hidden" name="next" value="{{ next }}" >
+    </form>
+
+
+    {# Assumes you setup the password_reset view in your URLconf #}
+    <p><a href="{% url 'password_reset' %}">Forget password?</a></p>
+</div>
+
+{% endblock %}

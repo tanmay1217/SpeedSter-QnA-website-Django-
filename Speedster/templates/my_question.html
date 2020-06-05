@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+<br>
+{% block content %}
+<br><br><br>
+{% if not is_question_asked %}
+<h2>no questions asked</h2>
+{% endif %}
+
+
+{% for i in questions %}
+<h6>{{i.title}}</h6> <hr>
+{% endfor %}
+{% endblock %}
