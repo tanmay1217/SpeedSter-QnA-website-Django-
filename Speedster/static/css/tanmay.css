@@ -2,7 +2,7 @@
     text-align: center;
     font-size: 0.8em;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 21px;
     background-color: #FFFFFF;
     border-top: thin solid #BBBBBB;
     clear: both;
@@ -24,7 +24,7 @@ input[type=textarea]{
 
 }
 input[type=text]:focus {
-  border: 3px solid #555;
+  border: 3px solid #555555;
 }
 input[type=text] {
   width: 100%;
@@ -41,7 +41,7 @@ input[type=password] {
 }
 .newsitem a{
             text-decoration:none;
-            font-size: 15px;
+            font-size: 16px;
         }
 
 .newsitem a:hover{
@@ -51,13 +51,13 @@ input[type=password] {
 .right_side_rectangle a:hover{
   text-decoration: none;
   color: green;
-  font-size: 30px;
+  font-size: 31px;
 
 }
 .right_side_rectangle2 a:hover{
   text-decoration: none;
   color:green;
-  font-size: 30px;
+  font-size: 31px;
 }
 
 .right_side_rectangle2 {
@@ -66,7 +66,7 @@ right: 50px;
 width: 200px;
 height: 120px;
 border: 3px ;
-font-size: 20px;
+font-size: 21px;
 }
 .right_side_rectangle {
 position: absolute;
@@ -74,11 +74,11 @@ right: 250px;
 width: 200px;
 height: 120px;
 border: 3px ;
-font-size: 20px;
+font-size: 21px;
 
 }
 .text-seconday-num_answers{
-font-size: 12px;
+font-size: 13px;
 font-style: italic;
 color: black;
 }
@@ -98,7 +98,7 @@ h2{
   position: absolute;
   top: 30%;
   left: 25%;
-  color: #ffb117;
+  color: #fdb117;
   font-size: 250%;
 }
 
@@ -122,7 +122,7 @@ h2{
   float: left;
   color: black;
   text-align: center;
-  padding: 12px;
+  padding: 13px;
   text-decoration: none;
   font-size: 18px;
   line-height: 25px;
